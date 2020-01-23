@@ -1,0 +1,188 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[header, margin, koma]{japjot}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[l]{EECS 126 Notes}
+\fancyhead[r]{Japjot Singh}
+\cfoot{\thepage}
+
+\begin{document}
+\title{\Large EECS 126 Notes}
+\author{\large Japjot Singh}
+\date{\large\today}
+
+\maketitle
+
+Course notes for EECS 126 taken in Spring 2020. 
+
+\tableofcontents
+\newpage
+
+\section{Tuesday, January 21} 
+Understand problem as an "experiment" and then solve it using tools in your
+skillset: combinatorics, calculus, common sense.
+\subsection{Fundamentals}
+\begin{definition}
+	Sample Space $\Omega$ of an experiment is the set of all oucomes of
+the experiment. 
+\end{definition}
+
+\begin{example}
+	Your experiment is 2 fair coins $\Omega = \{HH, HT, TH, TT\}$
+these outcomes (base outcomes) are \textbf{mutually exclusive (ME) and
+collectively exhaustive (CE)} 
+\end{example} 
+
+\begin{example}
+Toss a coin till the first "Heads" $\Omega = \{H, TH, TTH,
+\ldots\};|\Omega|= \infty$
+\end{example} 
+
+\begin{example}
+Waiting  at the bus-stop for next bus $\Omega = (0, T)$
+\end{example} 
+
+Visual 1 - We have the experiment which produces outcomes, once you have the
+outcome space the next definition is the definition of events
+
+\begin{definition}[Events]
+Allowable subsets of $\Omega$ (collections of
+outcomes) 
+\end{definition}
+
+\begin{example}
+Get at least 1 Head in experiment 1, $\{HH, HT, TH\}$,
+$p=\frac{3}{4}$ 
+\end{example} 
+
+\textbf{Defining events carefully is the key to tackling many tough problems.}
+
+\begin{example}
+Ex 2.2: Get an even number of tosses
+\end{example} 
+
+\begin{example}
+Ex 2.3: Waiting time < 5 min
+\end{example} 
+
+\begin{definition}[Probability Space]
+	 A \textbf{probability space} $(\Omega, \mathcal{F} , \mathcal{P} )$ is a mathematical construct
+to model "experiments" and has 3 components: \begin{enumerate}
+  \item $\Om$ is the set of all possible outcomes
+  \item $\mathcal{F}$ set of all events (composition of outcomes), where each event is a set containing
+    0 or more base outcomes, \textbf{$\emptyset$ is a base outcome} where $\pr(\emptyset) = 0$.
+      $\mathcal{F} $ is intuitively a powerset
+    (i.e. for the experiment in example 1.1 $\mathcal{F}=\{\emptyset, \{H,H\}, \{H, T\},
+    \ldots\}$).
+    \item $\mathcal{P}$ is the proability measure which assigns a number in $[0, 1]$ to each event in $\mathcal{F}$.
+\end{enumerate}
+\end{definition}
+
+\textbf{Base oucomes must be ME and CE} that is when writing out $\Om$ as a collection of all the base outcomes, they should be the most simplified components.
+
+\subsection{Axioms of Probability (Kolmogov)}
+What properties do we need the probability measure $\mathcal{P} $ to satisfy?
+\begin{enumerate}
+    \item $\pr(\emptyset)=0$ 
+    \item $\pr(\Omega)=1$, really just a normalization
+    \item $\pr(A_1\cup A_2\cup\ldots)=P(A_1)+P(A_2)+\ldots$ for disjoint (ME)
+      events $A_1,A_2,\ldots$
+\end{enumerate}
+for disjoint $\pr(\bigcup_{i=1}^n A_{i} )= \sum_{i=1}^n \pr(A_{i} )$ 
+\subsection{Fundamental facts about probability} 
+\begin{enumerate}
+    \item $\pr(A^{c}) = 1 - \pr(A)$ 
+    \item $\pr(A\cup B) =  \pr(A)+\pr(B)-\pr(A\cap B)$ \textbf{Vis2 Venn
+      Diagram}  
+      \item Union-bound $\pr(A_1\cup A_2\cup\ldots\cup A_{n} )\leq \sum_{i=1}
+        ^{n} \pr(A_{i} )$
+      \item Inclusion-Exclusion, a generalized version of number 2
+\end{enumerate}
+
+\begin{theorem}[Inclusion-Exclusion]
+	$\pr(A_1\cup A_2\cup\ldots\cup A_{n} )= \sum_{k=1}^n \sum_{1\leq i_1} \sum_{\leq i_2}\ldots\sum_{i_{k} \leq
+		n} (-1)^{i+1}$
+\end{theorem}
+\begin{proof}
+	here
+\end{proof}
+
+\subsection{Discrete Probability} 
+\[
+\pr(A) = \sum_{\omega \in  A} \pr(\omega)
+\] 
+In a uniform sample space, all the outcomes are equally likely so then \[
+  \pr(A) = \frac{|A|}{|\Omega|}
+\]
+\subsection{Conditional Probability} 
+Similar to events, conditioning on the right event will bail you out of tricky problems.
+\begin{definition}
+  $P(A|B) := \pr(\text{Event A given that Event B has occured})$ 
+\end{definition} 
+Thus for any event $A$ if $\pr(B)\neq 0$, \[
+\pr(A|B) = \frac{\pr(A\cap B)}{\pr(B)}\] 
+\begin{example}
+  Consider 2 six-sided dice. Let $A$ be the event that the first dice rolls is
+  a 6. Let  $B$ be the event the sum of the two dice is 7. Then \[
+    \pr(A|B) = \frac{\pr(A\cap B)}{\pr(B)} = \frac{\pr(\{6,1\})}{\pr(\{6,1\},
+    \{5,2\},\ldots,\{1,6\})}
+  \]
+  Similarly $\pr(A|\text{sum is 11})=\frac{1}{2}$
+\end{example}
+When conditioning on $B$,  $B$ becomes to new  $\Om$. 
+
+\subsection{Product (Multiplication) Rule} 
+\subsection{Total Probability}
+\subsection{Bayes' Theorem} 
+\newpage
+\section{Thursday, January 23}
+\subsection{Announcement}
+Readings B\&T ch1 and 2, HW 1 due next wednesday one minute before midnight 
+
+\subsection{Birthday Paradox} 
+Assuming a group of $n$ individuals whose birth dates are distributed uniformly
+at random. Given $k=365$ days in the year what is the probability that at least
+2 people in the group share the same birthday. Our sample space is the consists
+  of each possible set of assignments of birth dates to the  $n$ students in
+  the class. Since there are 365 posisble days for each of the  $n$ students in
+  the group $|\Om| = k^{n} = 365^{n} $. Now we can define our event of
+  interest, $A$, that at least 2 people have the same birthday. Since this is
+  a hard event to work with we can look at the complement $A^{c} $ the event
+  that no two people share a birth date. We can reach the solution with
+  a counting argument
+  \[
+    \pr(A^{c}) = \frac{|A^{c}|}{|\Om|} = \frac{365 * 364 *\ldots*(365
+    - (n-1))}{365^{n} }
+  \]
+  or with a probabilistic argument using the chain rule \[
+    \pr(A^{c} ) = 1(1-\frac{1}{k})(1-\frac{2}{k})\cdots(1 - \frac{n-1}{k})
+  \]
+  the latter expression can be approximated using Taylor Series which say
+  $e^{x} \approx 1 + x $ for $|x|<<1$.  \[
+    \pr(A^{c} )\approx 1\cdot e^{-\frac{1}{k}} \cdot e^{-\frac{2}{k}} \cdots
+    e^{-\frac{n-1}{k}} 
+  \] thus $\pr(A)=1-\pr(A^{c} )\approx 1 - e^{-\frac{n^2}{2k}} $ 
+
+\subsection{Bayes Rule False Positive Problem} 
+Suppoes there is a new test for a rare disease. 
+\begin{itemize}
+  \item If a person has the disease, test positive with $p=0.95$
+     \item If person does not have disease, test negative with $p=0.95$ 
+       \item Random person has the diseaes with $p=0.001$
+\end{itemize}
+Suppose a person tested positive, what is the probability that person has the
+disease. Let $A$ be the event has disease and  $B$ be the event test positive
+then by applying Bayes Rule directly  \[
+  \pr(A|B) = \frac{(0.95)(0.001)}{(0.95)(0.001) + (0.999)(0.05)} = 0.1875
+\] the factor heavily contributing to this number is the prior, how rare the
+diesase is in the first place. 
+\subsection{Independence} 
+\begin{definition}
+  Two events are independent if the occurence of one provides \textbf{no
+  information} about the occurence of the other (i.e. $\pr(A|B) = \pr(A)$). 
+\end{definition}
+Indepedence can also be written as \[
+  \pr(A\cap B) = \pr(A)\pr(B)
+\] 
+\end{document}

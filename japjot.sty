@@ -1,0 +1,146 @@
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{array}
+\usepackage{thmtools}
+\usepackage{hyperref} % for clickable links in toc
+\usepackage{bbm}
+
+%%%%%%%%% If/Else
+\newif\iftylerheader\tylerheaderfalse
+\newif\iftylerhints\tylerhintsfalse
+\newif\iftyleranswers\tyleranswersfalse
+\newif\iftylermargin\tylermarginfalse
+\newif\iftylerkoma\tylerkomafalse
+%%%%%%%  Receive Arguments
+\DeclareOption{header}{\tylerheadertrue}
+\DeclareOption{noheader}{\tylerheaderfalse}
+\DeclareOption{hints}{\tylerhintstrue}
+\DeclareOption{nohints}{\tylerhintsfalse}
+\DeclareOption{answers}{\tyleranswerstrue}
+\DeclareOption{noanswers}{\tyleranswersfalse}
+\DeclareOption{margin}{\tylermargintrue}
+\DeclareOption{nomargin}{\tylermarginfalse}
+\DeclareOption{koma}{\tylerkomatrue}
+\DeclareOption{nokoma}{\tylerkomafalse}
+\ProcessOptions
+
+%%%%%%%%%%%%%%  PAGE SETUP %%%%%%%%%%%%%%%%%
+\iftylerheader
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[l]{\slshape\nouppercase{\leftmark}}
+\fancyhead[r]{Tyler Zhu}
+\cfoot{\thepage}
+\fi
+
+\iftylerkoma
+\thispagestyle{empty}
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
+\setkomafont{section}{\large} %sets section headers to a reasonable size
+\fi
+
+\iftylermargin
+\geometry{
+	left=1in,
+	right=1in,
+	top=1in,
+	bottom=1in
+}
+\fi
+
+\iftylerhints 
+\usepackage{answers}
+\Newassociation{hint}{hintitem}{hints}
+\renewcommand{\solutionextension}{out}
+\Opensolutionfile{hints}
+\newcommand{\makehints}{\Closesolutionfile{hints}\input{hints.out}}
+\fi
+
+% Define a Sans-Serif Environment for KOMA Type Documents
+\newtheoremstyle{ss-definition}% <name>
+{3pt}% <Space above>
+{3pt}% <Space below>
+{}% <Body font>
+{}% <Indent amount>
+{\sffamily\bfseries}% <Theorem head font>
+{.}% <Punctuation after theorem head>
+{.5em}% <Space after theorem headi>
+{}% <Theorem head spec (can be left empty, meaning `normal')>
+
+
+%%%%%%% Nice Theorem Style  %%%%%
+
+\mdfdefinestyle{mdbluebox}{%
+	roundcorner = 10pt,
+	linewidth=1pt,
+	skipabove=12pt,
+	innerbottommargin=9pt,
+	skipbelow=2pt,
+	linecolor=blue,
+	nobreak=true,
+	backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+headfont=\sffamily\bfseries\color{MidnightBlue},
+mdframed={style=mdbluebox},
+headpunct={\\[3pt]},
+postheadspace={0pt}
+]{thmbluebox}
+\declaretheorem[%
+style=thmbluebox,name=Theorem]{theorem}
+
+\mdfdefinestyle{mdredbox}{%
+	linewidth=0.5pt,
+	skipabove=12pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	skipbelow=2pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	backgroundcolor=Salmon!5,
+	linecolor=RawSienna,
+}
+\declaretheoremstyle[
+headfont=\bfseries\color{RawSienna},
+mdframed={style=mdredbox},
+headpunct={\\[3pt]},
+postheadspace={0pt},
+]{thmredbox}
+\declaretheorem[%
+style=thmredbox,name=Example,numberwithin=section]{example}
+
+\iftylerkoma 
+\theoremstyle{ss-definition}
+\else
+\theoremstyle{definition}
+\fi
+%\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{problem}{Problem}
+
+%\newtheorem{example}{Example}[section]
+\newtheorem{exercise}[example]{Exercise}
+\newtheorem*{question}{Question}
+
+%\newtheorem{problem}{Problem}
+%\newtheorem{example}{Example}
+
+% Probability Theory Commands
+\newcommand{\pr}{\mathbb{P}}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}

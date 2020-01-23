@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Tuesday, January 21}{2}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Fundamentals}{2}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Axioms of Probability (Kolmogov)}{3}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Fundamental facts about probability}{3}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Discrete Probability}{3}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}Conditional Probability}{3}{subsection.1.5}% 
+\contentsline {subsection}{\numberline {1.6}Product (Multiplication) Rule}{4}{subsection.1.6}% 
+\contentsline {subsection}{\numberline {1.7}Total Probability}{4}{subsection.1.7}% 
+\contentsline {subsection}{\numberline {1.8}Bayes' Theorem}{4}{subsection.1.8}% 
+\contentsline {section}{\numberline {2}Thursday, January 23}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Announcement}{5}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Birthday Paradox}{5}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Bayes Rule False Positive Problem}{5}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Independence}{5}{subsection.2.4}% 
