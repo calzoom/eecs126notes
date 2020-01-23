@@ -12,3 +12,5 @@
 \contentsline {subsection}{\numberline {2.2}Birthday Paradox}{5}{subsection.2.2}% 
 \contentsline {subsection}{\numberline {2.3}Bayes Rule False Positive Problem}{5}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}Independence}{5}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Conditional Independence}{6}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Independence of a collection of events}{6}{subsubsection.2.4.2}% 

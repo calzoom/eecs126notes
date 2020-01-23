@@ -182,7 +182,38 @@ diesase is in the first place.
   Two events are independent if the occurence of one provides \textbf{no
   information} about the occurence of the other (i.e. $\pr(A|B) = \pr(A)$). 
 \end{definition}
+\textbf{insert vis1}  
 Indepedence can also be written as \[
   \pr(A\cap B) = \pr(A)\pr(B)
 \] 
+\textbf{Note:} Disjoint events are \textbf{not} Independent. Events $A$ and
+$B$ are disjoint if and only if $\pr(A\cap B) = 0 \implies  \pr(A)=0 \lor
+\pr(B)=0$. Thus since Base outcomes of a random experiment are disjoint (ME)
+and have non-zero probabilities they \textbf{must be dependent}.
+
+\subsubsection{Conditional Independence} 
+\[
+\pr(A\cap B|C) = \pr(A|C) \cdot \pr(B|C)
+\] 
+Note that \begin{itemize}
+  \item Dependent events can be conditionally independent
+    \item Independent events can be conditionally dependent
+\end{itemize}
+\begin{example}
+  Consider 2 indistinguishable coins: one is two-tailed and the other is
+  two-headed. You pick on of the 2 coins at random and flip it twice. \\\\
+  Let $H_{i}$ be the event that the $i^{th} $ flip is a Head ($i=1,2$). By
+  itself $\pr(H_1)=\pr(H_2) = \frac{1}{2}$ and $\pr(H_2|H_1) = 1 \neq
+  \pr(H_2) = 1/2$. Furthermore, $\pr(H_1\cap H_2|A) = \pr(H_1|A)\pr(H_2|A\cap
+  H_1)= \pr(H_1|A)\pr(H_2|A)$ which by definition tells us that $H_1,H_2$ are
+  conditionally independent given $A$.
+\end{example}
+
+\subsubsection{Independence of a collection of events}
+For all possible subsets of your events $A_{1:n} $, each subset must be
+independent that is
+\[
+  \pr(\bigcap_{i\in S}A_{i}) = \prod_{i\in S}(\pr(A_{i} )), \forall S
+\] where $S$ is any subset of the collection of events. Pairwise independence
+\textbf{does not imply} Joint independence of 3 or more events. 
 \end{document}
