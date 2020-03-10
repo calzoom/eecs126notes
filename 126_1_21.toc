@@ -14,3 +14,5 @@
 \contentsline {subsection}{\numberline {2.4}Independence}{5}{subsection.2.4}% 
 \contentsline {subsubsection}{\numberline {2.4.1}Conditional Independence}{6}{subsubsection.2.4.1}% 
 \contentsline {subsubsection}{\numberline {2.4.2}Independence of a collection of events}{6}{subsubsection.2.4.2}% 
+\contentsline {section}{\numberline {3}Markov Chains}{7}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Recurrence and Transience}{7}{subsection.3.1}% 

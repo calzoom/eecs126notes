@@ -216,4 +216,29 @@ independent that is
   \pr(\bigcap_{i\in S}A_{i}) = \prod_{i\in S}(\pr(A_{i} )), \forall S
 \] where $S$ is any subset of the collection of events. Pairwise independence
 \textbf{does not imply} Joint independence of 3 or more events. 
+\newpage
+\section{Markov Chains}
+\subsection{Recurrence and Transience}
+For each $x\in \mathcal{X} $, the random variable $T_{x} $ represents the first
+time that the chain visits state $x$, that is $T_{x}:= \min \{n\in \N: X_{n}
+  = x $. $T_{x} $ is called the hitting time of state $x$. We further define
+  $T_{x}^{+}  $ which is the hitting time for state $x$ execept $T_{x}^{+}
+  $ cannot equal 0, to avoid the trivial condition in which the chain starts at
+  $x$. 
+  Let $\rho_{x,y}:=\pr_x(T_{y}^{+} < \infty  )$, the probability that starting
+  from state $x$ we eventually reach state $y$ and shorthand
+  $\rho_{x}=\rho_{x,x}  $. 
+  \begin{definition}
+    A state $x$ is \textbf{recurrent}  if $\rho_{x}=1 $ and \textbf{transient}
+  if $\rho_{x}<1 $.
+  \end{definition}
+  \begin{proposition}
+    Let $N_{x} $ be the total number of visits to state $x$. If $x$ is
+    recurrent then $N_{x}=\infty $ in probability almost surely. Thus
+    $\mathbb{E}_{x} [N_{x} ] = \mathbb{E} [N_{x} | X_{0}=x  ] =\infty$. On
+    the other hand, if $x$ is transient then $\mathbb{E}_{x} [N_{x}
+    ] < \infty$, in fact, \[
+      \mathbb{E}_{x} [N_{x} ]  = \frac{\rho_{x}}{1-\rho_{x}}
+    \]  
+  \end{proposition}
 \end{document}
