@@ -218,6 +218,36 @@ independent that is
 \textbf{does not imply} Joint independence of 3 or more events. 
 \newpage
 \section{Markov Chains}
+Interested in models where the effect of the past on the future is summarized
+by a state, which changes over time given probabilities.
+\subsection{Discrete Time Markov Chains}
+In \textbf{discrete-time Markov chains}, state changes at certain discrete time
+instants, indexed by an integer variable $n$. At each step $n$, the state of
+the chain is denoted $X_{n}$, and belongs to a \textbf{finite} set $\mathcal{S}$ of
+possible states, called the state space. WLOG let $S = \{1,\ldots,m\}$.The Markov Chain is described in terms
+of its transition probabilities $p_{ij}$ where \[
+  p_{ij} = \pr(X_{n+1} = j | X_{n}=i) ~~ i,j \in \mathcal{S}
+\] 
+The key assumption underlying these chains is that the transition probabilities
+apply whenever $i$ is visited, no matter what happened in the past, and no
+matter how $i$ was reached, formally this is the \textbf{Markov property},
+requiring that: \[
+  \pr(X_{n+1} = j | X_{n}=i, X_{n-1}=i_{n-1},\ldots,X_0=i_0) = \pr(X_{n+1}=j
+  | X_{n}=i) = p_{ij}
+\] Furthermore the transition probabilities $p_{ij}$ must be nonnegative, and
+sum to one: \[
+  \sum_{j=1}^{m}  p_{ij} = 1, ~\text{for all }i
+\] 
+Another efficient way to encode the MC chain model is a transition probability
+matrix, a 2D array whose element at row $i$ and column $j$ is $p_{ij}$, the
+transition probability from $i$ to $j$ \[
+P = \begin{bmatrix}
+  p_{11} & p_{12} & \cdots & p_{1m} \\
+  p_{21} & p_{22} & \cdots & p_{2m} \\
+  \vdots & \vdots & \vdots & \vdots \\
+  p_{m 1} & p_{m 2} & \cdots & p_{mm}
+\end{bmatrix}
+\] 
 \subsection{Recurrence and Transience}
 For each $x\in \mathcal{X} $, the random variable $T_{x} $ represents the first
 time that the chain visits state $x$, that is $T_{x}:= \min \{n\in \N: X_{n}

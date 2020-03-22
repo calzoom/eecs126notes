@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1583804979 "126_1_21.tex" "126_1_21.pdf" "126_1_21" 1583804982
-  "/dev/null" 1583804955 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1584903177 "126_1_21.tex" "126_1_21.pdf" "126_1_21" 1584903179
+  "/dev/null" 1584903171 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -203,14 +203,14 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1557342086 4259635 562fc36ec496993777a6c428d8bfb811 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "126_1_21.aux" 1583804981 7551 01cd70ccd032c7d0cdcad7a1424b97e2 "pdflatex"
-  "126_1_21.out" 1583804981 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "126_1_21.tex" 1583804980 9634 ad493f1a2913cb30b3c96ac5d9a939fb ""
-  "126_1_21.toc" 1583804981 1590 a4e6632dff93fe28edfbe0f1b164d1ba "pdflatex"
+  "126_1_21.aux" 1584903179 7809 8b771f223187bca1ac4dff7c207114c6 "pdflatex"
+  "126_1_21.out" 1584903178 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "126_1_21.tex" 1584903176 11159 21caf4315b1d6315a526005215f06924 ""
+  "126_1_21.toc" 1584903179 1684 16011dab0d94029bdabc73518d381efd "pdflatex"
   "japjot.sty" 1583804475 3688 93e3026f54a58783e92f5e46aa3433a7 ""
   (generated)
-  "126_1_21.log"
   "126_1_21.pdf"
-  "126_1_21.aux"
   "126_1_21.toc"
+  "126_1_21.aux"
+  "126_1_21.log"
   "126_1_21.out"
