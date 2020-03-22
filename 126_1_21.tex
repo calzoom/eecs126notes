@@ -313,7 +313,50 @@ is certain to be revisited an infinite number of times. \textcolor{red}{does
 this hold only if state $j$ is itself recurrent? like what if you transition to
 state $j$ but the from state $j$ you can transition into some absorbing state
 $k$, then there is a nonzero probabilty of not returning to state $i$, which
-means that you are note certain to revist $i$ an infinite number of times}
+means that you are note certain to revist $i$ an infinite number of times}.\\\\
+A state is called \textbf{transient} if it is not recurrent. Thus, a state
+$i$ is transient if there is a state $j\in A(i)$ such that $i$ is not
+accessible from $j$, that is there exists $j\in A(i)$ but $i\\not\in  A(j)$.
+After each visit to state $i$, there is a positive probability that the state
+enteres such a state $j$ from which $i$ is no longer accessible. Given enough
+time, this will hapen, and state $i$ cannot be visited after that. Thus
+a transiet state will only be viisted a a finite number of times. 
+\begin{definition}[recurrent class]
+  If $i$ is a recurrent state, the set of states $A(i)$ that are accessible
+  form a \textbf{recurrent class} (or simply \textbf{class}). This means that
+  the states in $A(i)$ are all accessible from each other, and no state outside
+  $A(i)$ is accessible from them. Mathematically, for a recurrent state $i$, we
+  have $A(i) = A(j)$ for all $j$ that belong to $A(i)$. 
+\end{definition}
+At least one recurrent state must be accessible from any transient state, this
+follows from the definition of transient state. It follows that there must
+exist at least one recurrent state and hence at least one class, giving the
+following result
+\begin{theorem}[Markov Chain Decomposition]
+  \begin{itemize}
+    \item A MC can be decomposed into one or more recurrent classes, plus
+      possibly some transient states
+      \item  A recurrent state is accessible for all states in its class, but
+        is not accesssible from \emph{recurrent} states in \emph{other classses}
+        \item  A transient state is not accessible from any recurrent state,
+          but a a recurrent state must be accessible from a transient state
+          (otherwise the state cannot be transient it would just be recurrent
+          with itself)
+          \item  At least one, possibly more, recurrent states are accessible
+            from a given transiet state, this follows directly from the
+            previous bullet 
+  \end{itemize}
+\end{theorem}
+The previous theorem implies the following:
+\begin{enumerate}
+  \item  once the state enters (or starts in) a class of recurrent states, it
+    stays within that class; since all states in the recurrence class are
+    accessible from each other, all states in the class will be visited
+    an infinite number of times
+    \item  if the initial state is transient, then the state trajectory
+      contains an initial portion consisting of transient states and a final
+      portion consisting of recurrent states from the same class
+\end{enumerate}
 \begin{example}
   In a MC at least one recurrent state must be accssible from any given state.
   That is, for any $i$, there is at least one recurrent $j$ in the set $A(i)$. 
@@ -329,7 +372,7 @@ means that you are note certain to revist $i$ an infinite number of times}
     Let $s$ be a recurrent state, and suppoes $s$ has been visited once. From
     then on, the only possible states are those in the same recurrence class as
     $s$. Therefore WLOG we can assume there is a single self-absorbing
-    reucurrent class. we now want to show from some current state $i\neq s$,
+    state $s$. We now want to show from some current state $i\neq s$,
     $s$ is guaranteed to be visited some time in the future.\\\\ Consider a new
     MC with a self-absorbing state $s$. The transitions out of states $i$,
     $i\neq s$ are unaffected. Clearly, $s$ is recurrent in the new chain.
@@ -338,9 +381,18 @@ means that you are note certain to revist $i$ an infinite number of times}
     chain), this holds true in the new chain \textcolor{red}{still not
     completely convinced of this}. Since $i$ is not accessible from $s$ in the
     new chain, it follows that  every $i\neq s$ in the new chain is transient.
-    But if there exist recurrent states in a MC, then there is certain 
+    But if there exist recurrent states in a MC, they will eventually be
+    visited, so the state $s$ will eventually be visited by the new chain (with
+    probability 1). But the original chain is identical to the new one until
+    the time that $s$ is first visited. Hence, state $s$ is guaranteed to be
+    eventually visited by the original chain. BY repeating this argument, we
+    see that $s$ is guaranteed to be visited an infinite number of times (with
+    probability 1).
   \end{proof}
 \end{example}
+
+\subsubsection{Periodicity}
+
 \subsection{Recurrence and Transience}
 For each $x\in \mathcal{X} $, the random variable $T_{x} $ represents the first
 time that the chain visits state $x$, that is $T_{x}:= \min \{n\in \N: X_{n}

@@ -18,4 +18,5 @@
 \contentsline {subsection}{\numberline {3.1}Discrete Time Markov Chains}{7}{subsection.3.1}% 
 \contentsline {subsubsection}{\numberline {3.1.1}$n$-Step Transition Probabilities}{7}{subsubsection.3.1.1}% 
 \contentsline {subsection}{\numberline {3.2}Classification of States}{8}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Recurrence and Transience}{9}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Periodicity}{10}{subsubsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.3}Recurrence and Transience}{10}{subsection.3.3}% 
