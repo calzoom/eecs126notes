@@ -16,4 +16,6 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Independence of a collection of events}{6}{subsubsection.2.4.2}% 
 \contentsline {section}{\numberline {3}Markov Chains}{7}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Discrete Time Markov Chains}{7}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Recurrence and Transience}{7}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.1.1}$n$-Step Transition Probabilities}{7}{subsubsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.2}Classification of States}{8}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Recurrence and Transience}{9}{subsection.3.3}% 

@@ -247,7 +247,100 @@ P = \begin{bmatrix}
   \vdots & \vdots & \vdots & \vdots \\
   p_{m 1} & p_{m 2} & \cdots & p_{mm}
 \end{bmatrix}
-\] 
+\] Note that the transition matrix format is (row, col), $(i,j)$, (from,
+to).\\\\There is often a need to introduce new states that capture the depedence of the
+future on the model's past history. The probability of any single path can be
+found simply using the multiplication rule and tracing the path of transition
+probabilities. If there is no conditioning on the first state then we need to
+specify a probability law for the initial state $X_0$, the initial
+distribution.
+\subsubsection{$n$-Step Transition Probabilities}
+Many problems require calculating the probability law of the state at some
+future tiem, conditioned on the current state. This probability law is captured
+by the $n$\textbf{-step transition probabilities}, defined by  \[
+  r_{ij}(n) = \pr(X_{n}=j | X_0 = i)
+\] In words, $r_{ij}(n)$  is the probability that the state after $n$  time
+periods will be $j$, give that the current state is $i$. We can calculate it
+using the following recursion, \textbf{Chapman-Kolmogorov equation}  
+\begin{theorem}[Chapman-Kolmogorov Equation for $n$-Step Transition
+  Probabilities]
+  The $n$ -step transition probabilities can be calculated using the formula \[
+    r_{ij}(n) = \sum_{k=1}^{m} r_{ik}(n-1)p_{kj}, ~~~n>1, \text{and all }i,j
+  \] starting with $r_{ij}(1) = p_{ij}$
+  \begin{proof}
+    \begin{align*}
+      \pr(X_{n}= j | X_0 = i) &= \sum_{k=1}^{m} \pr(X_{n-1}=k | X_0
+      =i)\pr(X_{n} = j | X_{n-1}=k, X_0=i) \\ &= \sum_{k=1}^{m} r_{ik}(n-1)
+    \end{align*}
+  \end{proof}
+The Chapman-Kolmogorov equation can be represented my concisely via matrix
+multiplication, specifically the matrix of $n$-step transition probabilities
+$r_{ij}(n)$ is obtained by multiplying the matrix of $(n-1)$-step transition
+probabilities $r_{ik}(n-1)$, with the one-step transition probability matrix.
+Thus the $n$-step transition probability matrix is just the $n$th power of the
+transition probability matrix, $P^{n} $.
+\end{theorem}
+As $n\to \infty$, if $r_{ij}(n)$ converges to a limit and this limit does not
+depend on initial state $i$, then we say that state $j$ has a positive
+""steady-state" probability of being occupied at times far into the future.
+However, there are examples of qualitatively different behavior: where
+$r_{ij}(n)$ converges, but the limit depends on the initial state, and can be
+zero for selected states, particularly the probability that a particular
+absorbing state will be reached depends on how "close" we start to that state.
+This illustrates that there is a variety of states and asymptotic occupancy
+behavior in Markov chains. Thus we are motivated to classify and analyze
+various possibilities. 
+\subsection{Classification of States}
+We begin by focusing on the mechanism by which some states after being visited
+once, are certain to be visited again, while for other states this may not be
+the case. Our goal is to classify the states of a Markov chain with a focus on
+the long-term frequency by which they are visited. Let us first make the notion
+of revisiting a state precise. A state $j$ is \textbf{accessible} from state $i$
+if for some $n$, the $n$-step transition probability $r_{ij}(n)$ is positive
+(there is a positive probability of reaching $j$, starting from $i$, after some
+number of time steps). Let $A(i)$ denote the set of states accessible from
+state $i$.
+\begin{definition}[recurrent]
+  State $i$ is \textbf{recurrent} if \emph{for every} $j$ that is accessible
+from $i$, $i$ is also accessible from $j$, that is $\forall j \in A(i)$, $i\in
+A(j)$. 
+\end{definition}
+If we start at a recurrent state $i$, we can only visit $j\in A(i)$. But since
+state $i$ is recurrent $i\in A(j)$. Thus, from any future state, there always
+some probability of returning to state $i$. Given enough time, this is certain
+to happen. By repeating this argument, if a recurrent state is visited once, it
+is certain to be revisited an infinite number of times. \textcolor{red}{does
+this hold only if state $j$ is itself recurrent? like what if you transition to
+state $j$ but the from state $j$ you can transition into some absorbing state
+$k$, then there is a nonzero probabilty of not returning to state $i$, which
+means that you are note certain to revist $i$ an infinite number of times}
+\begin{example}
+  In a MC at least one recurrent state must be accssible from any given state.
+  That is, for any $i$, there is at least one recurrent $j$ in the set $A(i)$. 
+  \begin{proof}
+    \textcolor{red}{TODO} 
+  \end{proof}
+\end{example}
+\begin{example}
+  Show that if a recurrent state is visited once, the probability that it will
+  be visited gain in the future is equal to 1 (and, therefore, the probability
+  that it will be visited an infinte number of times is equal to 1).
+  \begin{proof}
+    Let $s$ be a recurrent state, and suppoes $s$ has been visited once. From
+    then on, the only possible states are those in the same recurrence class as
+    $s$. Therefore WLOG we can assume there is a single self-absorbing
+    reucurrent class. we now want to show from some current state $i\neq s$,
+    $s$ is guaranteed to be visited some time in the future.\\\\ Consider a new
+    MC with a self-absorbing state $s$. The transitions out of states $i$,
+    $i\neq s$ are unaffected. Clearly, $s$ is recurrent in the new chain.
+    Furthermore, for any $i\neq s$, there is a positive probability path from
+    $i$ to $s$ in the original chain (since $s$ is recurrent in the original
+    chain), this holds true in the new chain \textcolor{red}{still not
+    completely convinced of this}. Since $i$ is not accessible from $s$ in the
+    new chain, it follows that  every $i\neq s$ in the new chain is transient.
+    But if there exist recurrent states in a MC, then there is certain 
+  \end{proof}
+\end{example}
 \subsection{Recurrence and Transience}
 For each $x\in \mathcal{X} $, the random variable $T_{x} $ represents the first
 time that the chain visits state $x$, that is $T_{x}:= \min \{n\in \N: X_{n}
