@@ -385,13 +385,128 @@ The previous theorem implies the following:
     visited, so the state $s$ will eventually be visited by the new chain (with
     probability 1). But the original chain is identical to the new one until
     the time that $s$ is first visited. Hence, state $s$ is guaranteed to be
-    eventually visited by the original chain. BY repeating this argument, we
+    eventually visited by the original chain. By repeating this argument, we
     see that $s$ is guaranteed to be visited an infinite number of times (with
     probability 1).
   \end{proof}
 \end{example}
 
 \subsubsection{Periodicity}
+We are now interested in a characterization of a recurrent class, which relates
+to the presence or absence of a certain periodic pattern in the times that
+a state can be visited. 
+\begin{definition}[periodic]
+  A recurrent class is said to be periodic if the states can be grouped in
+  $d>1$ disjoint subsets $S_1,\ldots,S_{d}$ so that  all transitions from one
+  subset lead to the next subset. A recurrent class that is not period is said
+  to be aperiodic.
+\end{definition}
+In a periodic recurrent class we move through the sequence of subsets in order,
+and after $d$ steps, we end up in the same subset. Given a periodic recurrent
+class and a time $n$, and a state $i$, there must exist one or more states $j$
+for which $r_{ij}(n)=0$. This is because starting from $i$, only one of the
+sets $S_{k}$ is a possible transition at time $n$. Thus to verify aperiodicity
+of a recurrent class $R$, is to check whether there is a time $n\geq 1$ and
+a state $i\in R$ from which all states $j \in R$ can be reached in $n$ steps, that
+is $r_{ij}(n)>0, ~\forall j\in R$. A converse is true as well: if a recurrent
+class $R$ is aperiodic, then there exists a time $n$such that $r_{ij}(n) >0,
+~\forall i,j \in R$. Another way to check periodicity within a recurrent class
+is to calculate the gcd of all length paths from a state back to itself. If the
+gcd is 1 then the class is aperiodic. Equivalently, if there is any state with
+a self-loop in the recurrent class, then the recurrence class must be
+aperiodic.
+\subsection{Steady-State Behavior}
+We wish to understand long-term state occupancy behavior, the $n$-step
+transition probabilities $r_{ij}(n)$ when $n$ is very large. We are interested
+in understanding when $r_{ij}(n)$ convereges to steady-state values that are
+independent of the initial state. If there are multiple recurrence classes,
+then the limiting values of $r_{ij}(n)$ depend on the initial state. Thus we
+restrict our attention to chains involving a single recurrent class, plus some
+transient states and we can generalize the asymptotic behavior of multiclass
+chains in terms of the asymptotic behavior of single-class chains.\\\\ A single
+recurrent class is not strong enough to guarantee convergence of $r_{ij}(n)$,
+consider a recurrence class with two states 1 and 2 where $p_{12} = p_{21}=1$
+observe $r_{ij}(n)$ generically oscillates. \\\\ Thus if we exclude
+multiple recurrent classes and/or a periodic class, for every state $j$ the
+probability $r_{ij}(n)$, of being at state $j$, approaches a limiting value
+$\pi_{j}$ that is independent of the initial state $i$ with the following
+interpretation \[
+  \pi_{j} \approx \pr(X_{n}=j), ~~ \text{when $n$ is large}
+\] 
+and is called the \textbf{steady-state probability of } $j$ . This is
+consolidated in the following important theorem 
+\begin{theorem}[Steady-State Convergence Theorem]
+  COnsider a MC with a single recurrent class, which is periodic. Then, the
+  states $j$ are associated with steady-state probabilities $\pi_{j}$  that have
+  the following properties:
+  \begin{enumerate}[label=(\alph*)]
+      \item For each $j$ , we have \[
+          \lim_{n\to \infty}r_{ij}(n)= \pi_{j}, ~~ \forall i
+      \]
+      \item The $\pi_{j}$  are the unique solution to the system of equations
+        below:
+        \begin{align*}
+          \pi_{j} &= \sum_{k=1}^{m} \pi_{k}p_{kj}, ~~ j=1,\ldots, m, \\
+          1 &= \sum_{k=1}^{m} \pi_{k}
+        \end{align*}
+        \item We have \begin{align*}
+            \pi_{j} = 0, ~ \text{for all transient states $j$}, \\
+            \pi_{j} > 0, ~ \text{for all recurrent states $j$}
+        \end{align*}
+  \end{enumerate}
+\end{theorem} 
+The steady-state probabilities $\pi_{j}$ sum to 1 and form
+a probabilty-distribution $\pi$ on the state space, called the \textbf{stationary
+distribution}  of the chain with the property that if the intial state is
+chosen according to the distrubution $\pi$ then \[
+\pi P^{n}  = \pi, ~~ \forall n \in \Z_{\geq 0}
+\] Thus if the initial state is chosen according to the stationary
+distribution, the state at any future time will have the same distribution. The
+equations \[
+ \pi_{j} &= \sum_{k=1}^{m} \pi_{k}p_{kj}, ~~ j=1,\ldots, m,
+\] are called the \textbf{balance equations}.
+\begin{theorem}[Steady-State Probabilities as Expected State Frequencies]
+ For a MC with a single class which is aperiodic, the steady-state
+ probabilities $\pi_{j}$ satisfy \[
+   \pi_{j} = \lim_{n \to \infty} \frac{v_{ij}(n)}{n}
+ \]  where $v_{ij}(n)$ is the expected value of the number of visits to state
+ $j$ within the first $n$ transitions, starting from state $i$. 
+\end{theorem}
+\begin{theorem}[Expected Frequency of a Particular Transition]
+  Consider $n$ transitions of a MC with a single class which is aperiodic,
+  starting from an initial state. Let $q_{jk}(n)$ be the expected number of
+  such transitions that take the state from $j$ to $k$. Then, regardless of the
+  initial state we have \[
+    \lim_{n\to \infty} \frac{q_{jk}(n)}{n} = \pi_{j}p_{jk}
+  \] That is, the expected frequency of transitions from $j$ to $k$, regardless
+  of initial state converges to $\pi_{j}p_{jk}$.
+\end{theorem}
+\subsection{Birth-Death Process}
+\begin{definition}[birth-death process]
+ A birth-death process is a MC in which the states are linearly arranged and
+ transitions can only occur to a neighboring state, or else leave the state
+ unchanged (self-loop).  
+\end{definition}
+Birth-death processes also induce the notation \[
+  b_{i} = \pr(X_{n+1} = i+1 | X_{n} = i), ~~~\text{"birth" probabilty at state
+  $i$}
+\]\[
+d_{i} = \pr(X_{n+1} = i-1 | X_{n} = i), ~~~\text{"death" probabilty at state $i$}
+\] 
+For a b-d process the balance equations are substanitally simplified. Any
+transition from $i$ to $i+1$ has to be followed by a transition from $i+1$ to
+$i$ before another transition from $i$ to $i+1$ to occur. Thus the expected
+frequency of transitions from $i$ to $i+1$, which is $\pi_{i}b_{i}$  must be
+equal to the expected frequency of transitions from $i+1$ to $i$ which is
+$\pi_{i+1}d_{i+1}$, leading us to the \textbf{local balance} equations \[
+\pi_{i}b_{i} = \pi_{i+1}d_{i+1}, ~~~ i=0,1,\ldots,m-1
+\]  Using these local balance equations we obtain \[
+\pi_{i} = \pi_0 \frac{b_0b_1\cdots b_{i-1}}{d_1d_2\cdots d_{i}}, ~~~
+i=1,\ldots,m
+\] using this and the normalization equation we can compute the probabilities
+$\pi_{i}$. 
+
+\subsection{Absorption Probabilities and Expected Time to Absorption}
 
 \subsection{Recurrence and Transience}
 For each $x\in \mathcal{X} $, the random variable $T_{x} $ represents the first

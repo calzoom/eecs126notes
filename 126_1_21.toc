@@ -19,4 +19,6 @@
 \contentsline {subsubsection}{\numberline {3.1.1}$n$-Step Transition Probabilities}{7}{subsubsection.3.1.1}% 
 \contentsline {subsection}{\numberline {3.2}Classification of States}{8}{subsection.3.2}% 
 \contentsline {subsubsection}{\numberline {3.2.1}Periodicity}{10}{subsubsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.3}Recurrence and Transience}{10}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.3}Steady-State Behavior}{10}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Birth-Death Process}{12}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Recurrence and Transience}{12}{subsection.3.5}% 
