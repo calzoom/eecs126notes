@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 MAR 2020 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  31 MAR 2020 04:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1152,58 +1152,98 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--210
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 250--257
+Underfull \hbox (badness 10000) in paragraph at lines 221--250
 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 257.
+Underfull \hbox (badness 10000) in paragraph at lines 221--250
+
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 257.
+Overfull \hbox (6.80093pt too wide) in paragraph at lines 221--250
+\OT1/cmr/m/n/10.95 Furthermore the time-homogeneity ($\U/msb/m/n/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k; ^^\\OT1/cmr/m/n/10.95 ) = \U/msb/m/n/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k; t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 ^^\ \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 t$\OT1/cmr/m/n/10.95 ), in-de-pen-dence ($\OML/cmm/m/it/10.95 N[] \OMS/cmsy/m/n/10.95 ^^X \OML/cmm/m/it/10.95 Poisson\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^U^^\\OT1/cmr/m/n/10.95 )$,
+ []
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 266.
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--307
+
+ []
+
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 308--324
+Underfull \hbox (badness 10000) in paragraph at lines 312--334
 
  []
 
 [8]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 335.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 361.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 368.
-
-Underfull \hbox (badness 10000) in paragraph at lines 372--391
+Underfull \hbox (badness 10000) in paragraph at lines 365--372
 
  []
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 372.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 372.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 381.
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 419--433
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--433
+Underfull \hbox (badness 10000) in paragraph at lines 423--439
 
  []
 
 [10]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 438.
+(mdframed)              on input line 450.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 476.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 483.
 
-./126_1_21.tex:466: Misplaced alignment tab character &.
-l.466  \pi_{j} &
+Underfull \hbox (badness 10000) in paragraph at lines 487--506
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 534--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--548
+
+ []
+
+[12]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 553.
+
+./126_1_21.tex:581: Misplaced alignment tab character &.
+l.581  \pi_{j} &
                 = \sum_{k=1}^{m} \pi_{k}p_{kj}, ~~ j=1,\ldots, m,
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1214,34 +1254,34 @@ might try typing `S' now just to see what is salvageable.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 468.
+(mdframed)              on input line 583.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 475.
-[11]
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 524.
- [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
+(mdframed)              on input line 590.
+[13]
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 641.
+ [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
  (./126_1_21.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 532.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
 Package rerunfilecheck Info: File `126_1_21.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33370 strings out of 492616
- 634186 string characters out of 6129482
- 810559 words of memory out of 5000000
- 36721 multiletter control sequences out of 15000+600000
+ 33376 strings out of 492616
+ 634235 string characters out of 6129482
+ 815558 words of memory out of 5000000
+ 36723 multiletter control sequences out of 15000+600000
  542970 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,83p,9128b,1103s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 126_1_21.pdf (12 pages, 219264 bytes).
+Output written on 126_1_21.pdf (14 pages, 234956 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 106 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 

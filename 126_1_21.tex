@@ -217,6 +217,121 @@ independent that is
 \] where $S$ is any subset of the collection of events. Pairwise independence
 \textbf{does not imply} Joint independence of 3 or more events. 
 \newpage
+\section{Poisson Process}
+If a bus arrives every every 15 minutes, with full certainty, then a passenger
+showing up at a random time will have to wait on average $\frac{1}{16}(0
++1+\ldots + 14 + 15) = \frac{1}{2}(0 + 15) = 7.5$ minutes. This is because
+with equal probability you could arrive when the first bus, or when the second
+bus comes, or any time in between and it is deterministic that each bus arrives
+every 15 minutes.\\\\ Now let's introduce uncertainty. Suppose the arrival of
+buses is modeled by a Poisson Process with rate $\lambda=\frac{1}{15}$. This
+means that we expect 1 arrival every $\lambda x = 1 \to x = \frac{1}{\lambda
+} = 15$ units of time (minutes). This means that interarrival
+time $T_{i} \sim \exp(15)$ and $\mathbb{E}[T_{i}]=\frac{1}{15}$. That is, a bus arrives
+every 15 minutes, with some uncertainty. \\\\ Furthermore the time-homogeneity
+($\pr(k, \tau) = \pr(k, t), ~\forall \tau=t$),
+independence ($N_{\tau}\sim Poisson(\lambda \tau)$, specifically $N_{\tau}$ is
+memoryless, that is for any time $t>0$ the history of the process after time $t$ is
+also a Poisson process and is indepdent from the history of the process until
+time $t$ this is true in reverse-time direction as well), and small interval
+properties hold ($\pr(0, \tau) = 1-\lambda \tau, ~ \pr(1, \tau) = \lambda \tau,
+~ \pr(k, \tau) = \mathcal{O}(\epsilon)$). \\\\ We can illustrate this as
+a limiting case of a discrete setup for better intuition of the properties.
+Imagine rolling a 15-face die, one face colored green indicating a bus arrival and
+14 colored red indicating the absence of an arrival. How often should I roll
+   this dice to simulate the process. The probability of a green face
+   is $\frac{1}{15}$. Let $T$ equal the number of trials until we see a green
+   face. Since each roll of the dice is $\sim Ber(\frac{1}{15})$,
+   $T\sim Geo(\frac{1}{15})$ and $\mathbb{E}[T]=15$. We expect to roll 15
+   times to observe one success. How often should we roll to reach our target
+   success rate of $\lambda = \frac{1}{15} = \frac{1\text{ success }}{15\text{
+   minutes}}$ (we can replace minutes with any units but in the question we
+   were given that the rate was define in terms of minutes).  So we just need
+   to solve \begin{align*}
+     \frac{1\text{ success}}{15\text{ rolls }}\cdot \frac{1\text{ roll
+     }}{x\text{ minutes}} &= \frac{1 \text{ success}}{15\text{ minutes}}
+     = \lambda \\
+                          &\rightarrow x =1
+   \end{align*} If we roll once every minute, then we will expect to see one
+   arrival every 15 minutes. Now let us consider a 60 sided dice with one face
+   green and the rest red. Then $T\sim Geo(\frac{1}{60})$ and $\mathbb{E}[T]
+   = 60 $ implying $\frac{1}{60} \frac{\text{success}}{\text{rolls}}$ and thus
+   \begin{align*}
+     \frac{1}{60}\frac{\text{arrival}}{\text{rolls}} \cdot
+     \frac{1}{x}\frac{\text{roll}}{\text{minutes}} &=
+     \frac{1}{15}\frac{\text{arrival}}{\text{minutes}} \\ &\implies
+     x = \frac{1}{4}
+   \end{align*} If we roll once every 15 seconds, $0.25$ minutes, then we will
+   expect to see one arrival every 15 minutes. \\\\ Now we can consider a $N$
+   sided dice. $T\sim Geo(\frac{1}{N})$ and $\mathbb{E}[T] = N $, so we expect
+   one arrival every $m$ units (minutes). We need $Nm=15$ and so
+   $m=\frac{15}{N}$ verified below \begin{align*}
+     \frac{1}{N}\frac{\text{arrivals}}{\text{trials}} \cdot
+     \frac{1}{x}\frac{\text{trials}}{\text{units}} &=
+     \frac{1}{15}\frac{\text{arrivals}}{\text{units}} \\ &\to x = \frac{15}{N}
+     \\
+     \lim_{N\to \infty} \frac{1}{\lambda N} &\to 0
+   \end{align*} That is as we let this dice contain an infinite number of
+   sides, the probability of an arrival at an instant goes to 0, but also the
+   rate at which we sample for arrivals gets faster and faster and we expect to
+   see one arrival every $\frac{1}{\lambda }$ units. This is the continuous
+   time Poisson process. \\\\ Notice how the properties of continuous
+   probability and PP line up. \textcolor{red}{is there a correspondance with
+   density, probability at a single point being 0 and then delta getting
+ smaller corresponding with the interval becoming smaller?}. The PP properties
+ also hold and rather intuitively. Since each roll of the dice is a Bernoulli
+ trial, each sample is iid. Indepedence follows directly from the fact that the
+ number of arrivals during an interval is the sum of the iid samples in that
+ interval and since functions of indepdent variables are indepdent, the nmber
+ of arrivals in disjoint intervals are indepedent. And since they are
+ identically distributed, time-homogeneity holds. $\pr(1,\tau)$ can be written
+ as some quantity times the number of intervals of unit-length $m$. In a length
+ $\tau$ interval there are $\frac{\tau}{m}$ samples from arrivals. In each of
+ these samples the probability of arrival is some $a$. We want to find $a$ such
+ that $a\cdot \frac{\tau}{m} = \lambda \tau$. We find that such $a$ satisifies
+ $\frac{m}{a}= \frac{1}{\lambda}$ and we use the fact that $Nm=\frac{1}{\lambda
+ }$ from the bottom of the previous page along with $\lim_{N\to \infty} m = 0$
+ to get $a=\frac{1}{N}$ and the interpretation that in the limit as $N\to
+ \infty$ we approach and infinite number samples from arrivals where each
+ sample is an arrival with probability $\frac{1}{N}$. That is in a PP the
+ probability of one arrival in a length $\tau$ interval is equivalent to
+ integrating an infinitely small uniform density across a relatively large
+ region with respect to the rate parameter that the proportion of arrivals to
+ unit-length intervals is equal to $\lambda $. The probability of more than one
+ arrival in an interval of length $\tau$ also approach 0 as $\tau$ approaches
+ 0. \\\\ Thus our intuition: A Poisson process with rate $\lambda $ models
+    arrivals over a period of time where the rate indicates how many
+    unit-length intervals $\delta$ there are for each arrival. So for some time
+    interval $\tau$. The probability of $k$ arrivals in this interval $\tau$,
+    is effectively equal to the probability of $k$ successful realizations of
+    $$\lim_{N\to \infty}\frac{\tau}{\delta} Bernoulli(1/N)$$ 
+    In cleaner notation: $X_{i}\sim Bernoulli(\frac{1}{N})$ models a arrival or
+    non-arrival in each sample. We sample a total of $\frac{\tau}{\delta}$
+    times, or the total number of unit interval times since $X_i$ models
+    arrivals in unit intervals. Furthemore we are modeling 
+    $N\delta = \frac{1}{\lambda }$  we have $$\lim_{N\to\infty}\delta =0$$ an
+    inverse relationship between $N $ and $\delta$. Then the number of arrivals
+    of the interval of length $\tau$ is just $S_{\tau} = X_1 + X_2 + \ldots
+    + X_{\frac{\tau}{\delta}}$. And so $\pr(k, \tau) = \pr(S_{\tau} = k) \sim
+    Binomial(\frac{\tau}{\delta}, \frac{1}{N})$ and by the Poissoin
+    approximation of the Binomial for small $p$ and large $n$ $\pr(k,
+    \tau)~Poisson(np)=Poisson(\frac{\tau}{N\delta})$. Notice that
+    since $N\delta = \frac{1}{\lambda }$ we have $\tau \cdot \frac{1}{N\delta}
+    = \lambda \tau$ thus the number of arrivals in an interval of length $\tau$
+    is $Poisson(\lambda \tau)$. \\\\ Even cooler yet, the memoryless property
+    of Poisson reads off directry from the iid-ness from Bernoulli RVs. Given
+    we have already seen $t$ arrivals, the probability of seeing $s+t$ arrivals
+    is the same as seeing $s$ arrivals. This follows directly from the poisson.
+    But also not that  since the Bernoulli's are iid each of the additional $s$
+    success are not in any way affected by the history of $t$ arrivals. The
+    waiting time until the next arrival is just the waiting time for
+    a Bernoulli to output 1, but that is just geometric and the continous
+    analog is exponential. Given that we have $k$ arrivals in an interval of
+    length $\tau$ its easy to see that the distribution of arrivals is uniform.
+    Think of the discretized version. If we know that in $\tau$ iid bernoulli RVs
+    there were $k$ successes and nothing else, then the distribution on the indices of the bernoulli's which were
+    successful is uniform on $[1, \tau]$. 
+\newpage
 \section{Markov Chains}
 Interested in models where the effect of the past on the future is summarized
 by a state, which changes over time given probabilities.

@@ -14,11 +14,13 @@
 \contentsline {subsection}{\numberline {2.4}Independence}{5}{subsection.2.4}% 
 \contentsline {subsubsection}{\numberline {2.4.1}Conditional Independence}{6}{subsubsection.2.4.1}% 
 \contentsline {subsubsection}{\numberline {2.4.2}Independence of a collection of events}{6}{subsubsection.2.4.2}% 
-\contentsline {section}{\numberline {3}Markov Chains}{7}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Discrete Time Markov Chains}{7}{subsection.3.1}% 
-\contentsline {subsubsection}{\numberline {3.1.1}$n$-Step Transition Probabilities}{7}{subsubsection.3.1.1}% 
-\contentsline {subsection}{\numberline {3.2}Classification of States}{8}{subsection.3.2}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Periodicity}{10}{subsubsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.3}Steady-State Behavior}{10}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Birth-Death Process}{12}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Recurrence and Transience}{12}{subsection.3.5}% 
+\contentsline {section}{\numberline {3}Poisson Process}{7}{section.3}% 
+\contentsline {section}{\numberline {4}Markov Chains}{9}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Discrete Time Markov Chains}{9}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}$n$-Step Transition Probabilities}{9}{subsubsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.2}Classification of States}{10}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Periodicity}{12}{subsubsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.3}Steady-State Behavior}{12}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Birth-Death Process}{14}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Absorption Probabilities and Expected Time to Absorption}{14}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}Recurrence and Transience}{14}{subsection.4.6}% 
